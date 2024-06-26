@@ -1,0 +1,5 @@
+str = input()
+
+for i in str:
+    print(i)
+# str이 끝날때까지 한 문자씩 출력한다.
