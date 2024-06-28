@@ -1,5 +1,6 @@
 2. 터미널, bashrc, 리눅스 익숙해지기
 
+[6/27]
 - 현재 폴더 상황을 보기 위해 ls 사용
 - 폴더를 만들기 위해서 mkdir 사용
 ex. mkdir test -> 이후에 ls로 확인해보면 mkdir라는 폴더가 새로 생성된 것을 확인할 수 있음
@@ -9,3 +10,23 @@ ex. cd test를 사용하면 test라는 폴더로 이동하고, 이 폴더에서 
 ex. rm -r test를 사용하면 test라는 폴더가 삭제됨. -r을 사용하지 않을 경우, cannot remove 'test': Is a directory라는 경고가 뜸
 (* 폴더를 삭제할 권한이 없는 경우에는 sudo를 붙여서 관리자 권한으로 삭제)
 
+[6/28]
+- Shell : 커널(pc 실행 이후 메모리에 상주하는 프로그램), 사용자 간을 연결해주는 프로그램
+- bash : ubuntu에서의 Shell (Shell은 echo $SHELL로 확인할 수 있음)
+- .bashrc : bash의 설정을 저장하는 여러 파일 중 사용자 개별로 지정한 설정을 저장해두는 것, subl ~/.bashrc로 .bashrc를 열 수 있음
+- ROS2 설치 확인을 위한 명령어를 터미널 실행 때마다 입력해야 하지만, 귀찮기 때문에 두 가지로 해결 가능함
+  ① .bashrc에 명령 입력해두기
+      위의 명령어로 실행된 sublime text의 마지막에 코드 (p.65) 입력 후 저장 -> 터미널에서 source ~/.bashrc를 실행하면 방금 설정한 내용이 반영된 것을 확인할 수 있음
+  ② .bashrc에서 alias 설정하기 (alias command_name="values")
+      sublime text 파일의 맨 밑에 alias alias_test="echo \"Alias test\""로 alias를 지정한 후 저장함.
+      -> terminal에서 source ~/.bashrc와 alias_test라는 명령어를 이용해서 alias를 테스트할 수 있음.
+      -> alias라는 명령어로 alias 설정 확인 가능. (위에서 설정한 alias_test도 확인 가능)
+  * alias_test 대신 ①에서 사용한 코드를 alias 설정으로 변경 (약간 수정된 부분이 있음. p.68) * 띄어쓰기에 주의하자...
+  -> 터미널 재실행 후 humble 명령어를 실행하면 됨
+- 위의 두 가지 방법 중 본인에게 더 편한 방식을 선택하면 됨.
+- source ~/.bashrc 명령 또한 alias로 간편하게 사용하도록 설정 -> 재실행 후 sb 명령어로 테스트 가능
+- 이외에 다른 명령어들도 alias에 추가하여 간편하게 사용 가능
+- ROS2는 ROS1과 다르게 DDS 사용 -> 도메인을 별도로 지정할 필요가 있음
+- export ROS_DOMAIN_ID=<id>라는 명령어를 사용하거나 alias 설정을 통해 도메인 지정 가능
+
+* summary : source, .bashrc, alias
