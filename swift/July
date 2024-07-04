@@ -1,1 +1,9 @@
+* 오류 정리 *
 
+1. Invalid redeclaration of 'ViewController'
+- 파일을 아예 삭제한 뒤 프로젝트를 새로 만드니까 해결됨.
+
+* 공부 내용 정리 *
+
+- .padding() 사용 시 배경의 여백이 생겨서 더 넓어짐
+- .padding() 후에 .background(.~)를 사용해야 지정한 색의 배경 부분이 넓어지고, 순서가 바뀌면 결과가 달라짐
