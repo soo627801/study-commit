@@ -8,3 +8,10 @@
 내가 해결한 방법은 우분투만 초기화 후 재설치하는 것이다.
 처음 우분투 설치할 때처럼 우분투 usb를 꽂고, bios 진입 등의 절차를 처음부터 다시 시작하면 해결됐다.
 물론 우분투에 중요한 자료가 있으면 안 되지만, 내 경우에는 프로그램 두세 개 설치한 게 전부여서 그냥 이 방법으로 해결했다.
+
+[0715-0716]
+1. E: Unmet dependencies. Try 'apt --fix-broken install' with no packages (or specify a solution).
+2. E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
+3. E: Archives directory /var/cache/apt/archives/partial is missing. - Acquire (2: No such file or directory)
+
+구글에 나와있는 온갖 방법을 사용해도 또 해결이 안 된다... 또 초기화 해야되는 건가...
