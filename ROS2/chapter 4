@@ -1,5 +1,19 @@
-[0713]
+[0716]
 *ctrl alt T로 terminator 실행 가능 (단축어)
 
 1. python 다루기
- 
+- python3-pip, pip3 jupyter, ipywidgets, pyyaml, bqplot 설치하기
+- *재부팅 후* jupyter notebook 실행하기
+제대로 실행되는지 확인했다면, ctrl+c로 중단시키기
+
+python이라는 파일을 만들고, 그 파일에 들어가서 주피터 실행시키기
+
+*학교 수업을 들으면서 주피터에 대해서는 배웠기 때문에 실습만 해보고 넘어감. 내용 정리 안 함!*
+
+2. ch3에서 했던 토픽 구독을 파이썬으로 해보기
+- python 파일에 들어가서 주피터 실행시키기 !!!
+jupyter에서 python3 파일을 생성해주고 이름도 설정해줌.
+
+- 구독을 위해 필요한 모듈 import 하기
+- as : alias
+callback 함수 : 토픽을 받을 때마다 어떤 일을 수행하게 하는 함수
