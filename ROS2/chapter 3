@@ -35,3 +35,8 @@ turtle1이 발행하는 pose 토픽을 사용하기 위해 어떻게 생겼는�
 linear_velocity : 거북이의 직선 방향 속도 / angular_velocity : 거북이의 회전 방향 속도
 토픽 구독하기 : ros2 topic echo /turtle1/pose
 토픽 발행하기 ~ : (p.96-101 참고하기)
+
+6. ROS Action : 서비스, 토픽의 혼합
+ros2 run turtlesim turtle_teleop_key라는 명령어를 사용하면 화살표 키로 turtle을 움직이게 할 수 있음.
+액션에서는 send_goal로 목표를 지정함.
+
