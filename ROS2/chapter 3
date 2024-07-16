@@ -1,1 +1,37 @@
 [0709] ; 실수로 기록한 파일을 삭제해서 다시 기록...
+
+1. turtlesim
+desktop으로 설치 시 turtlesim도 같이 설치되기 때문에 패스 가능
+ros2 run [PKG Name] [Node Name] 이라는 명령어 이용
+여기서는 ros2 run turtlesim turtlesim_node 라고 입력함. 마찬가지로 탭 키를 이용하면 타자치는 수고를 덜 수 있음.
+
+2. sudo apt install 명령으로 설치한 패키지들의 환경은 /opt/ros/humble/ 경로의 setup.bash 파일을 읽어오면 알 수 있음.
+여기서도 터미널을 실행할 때마다 입력해줘야 하는 수고로움이 발생하기 때문에 alias로 설정해두면 편리함.
+
+3. turtlesim 명령어 실행 후 다른 터미널에 ros2 node list를 실행하면 현재 실행 중인 노드가 turtlesim 임을 알 수 있음.
+ros2 node info /[PKG Name]을 사용하여 정보를 확인할 수도 있음.
+이 결과에 주목해야 하는데, 자세한 것은 나중에 배움 (p.79)
+
+4. ROS Service
+- 두 노드가 데이터를 주고 받는 방식 중 클라이언트가 서버에게 요청하면 응답을 받을 수 있는 방식
+3에서 실습한 상황에서 건드리지 않고 새로운 터미널 하나 더 실행하여 4의 실습을 진행함.
+ros2 service list라는 명령어를 사용하면 사용 가능한 서비스 목록을 볼 수 있음.
+ros2 service type /turtle1/teleport_absolute라는 명령어로 해당 서비스의 정의를 확인할 수 있음. 아까 위에서 확인한 서비스 모두 적용 가능함.
+결과 해석 ; turtlesim : 노드&패키지의 이름 / srv : service&해당 패키지가 위치하는 폴더명 / TeleportAbsolute : 서비스의 데이터 정의
+
+(책 참고하기 p.82-)
+
+서비스를 요청하기 위해서는 ros2 service call [service name] [service definition] "data" 라는 명령어 사용함. 여기서 주의할 점은 x: 2, y: 7 과 같은 형태로 콜론을 왼쪽에 붙여줘야 함.
+
+*service와 관련된 부분은 나중에 꼭 다시 복습해보기!*
+
+5. ROS Topic
+*서비스와 토픽을 꼭 비교해보기!*
+service와 마찬가지로 ros2 topic list로 목록 확인이 가능함.
+ros2 topic list -t를 이용하면 각 토픽의 데이터 타입을 하나씩 확인하지 않고 한 번에 확인이 가능함.
+현재 사용할 수 있는 토픽이 발행되고 있는지 / 구독 대기인지 알기 위해서는 ros2 topic info /turtle1/pose라는 명령어를 사용함.
+ros2 topic list -v로 발행 / 구독 노드의 개수를 한 번에 확인할 수 있음.
+turtle1이 발행하는 pose 토픽을 사용하기 위해 어떻게 생겼는지 확인하기 위해서, interface show 명령을 사용함.
+linear_velocity : 거북이의 직선 방향 속도 / angular_velocity : 거북이의 회전 방향 속도
+토픽 구독하기 : ros2 topic echo /turtle1/pose
+토픽 발행하기 ~ : (p.96-101 참고하기)
