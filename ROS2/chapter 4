@@ -17,3 +17,16 @@ jupyter에서 python3 파일을 생성해주고 이름도 설정해줌.
 - 구독을 위해 필요한 모듈 import 하기
 - as : alias
 callback 함수 : 토픽을 받을 때마다 어떤 일을 수행하게 하는 함수
+
+3. python으로 토픽 발행
+- 내가 발행 / 구독 등 다루려고 하는 토픽의 데이터 타입에 따라 import 하기
+- init() : 초기화
+- Twist 데이터 타입 지정(? instantiating)하기 -> msg라는 변수에 어떤 내용이 있는지 출력 가능함.
+pub = test_node.create_publisher(Data Type, 'topic name', number) : 토픽을 발행하는 것과 관련된 기능, 설정들을 지정할 수 있음.
+msg.linear = 2.0
+msg.angular = 2.0
+pub.publish(msg)
+라는 코드를 통해서는 거북이가 회전하는 것을 알 수 있음.
+
+timer를 이용해서 토픽을 발행하기 위해서 test_ node.create_timer(timer_period, timer_callback)을 사용함.
+test_node.destroy_node() : 노드 종료하기
