@@ -1,0 +1,13 @@
+24/07/19
+
+#include <stdio.h>
+
+int main(void) {
+    int a, b;
+    while (scanf("%d %d", &a, &b) != EOF){
+        printf("%d\n", a+b);
+    }
+    return 0;
+}
+
+# 계속해서 출력 초과 오류가 떴었는데 찾아보니 EOF를 사용해야하고, 백준에서 입력 개수를 모를 때 자주 사용된다고 함. 꼭 기억해두자
