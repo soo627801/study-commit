@@ -1,1 +1,6 @@
+[0720]
 
+1. matplotlib 사용하기
+import 하던 도중에 에러가 발생했음.
+ImportError: numpy.core.multiarry failed to import
+버전 차이 때문에 발생한 에러라고 하는데 또 구글에 나와있는 온갖 방법으로 해결이 안 됨.
