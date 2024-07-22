@@ -15,3 +15,7 @@
 3. E: Archives directory /var/cache/apt/archives/partial is missing. - Acquire (2: No such file or directory)
 
 구글에 나와있는 온갖 방법을 사용해도 또 해결이 안 된다... 또 초기화 해야되는 건가...
+-> 결국 또 초기화했다.
+
+[-0722]
+1. ImportError: numpy.core.multiarray failed to import
