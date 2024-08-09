@@ -36,3 +36,7 @@ sudo reboot
 한글은 기존에 설치한 방식대로 설치하고 재부팅해주면 됨.
 독 해결 방법은 https://askubuntu.com/questions/17381/unity-doesnt-load-no-launcher-no-dash-appears/76951#76951 여기를 참고했습니다아...
 ctrl+alt+f7 하자마자 블랙 스크린이 뜨길래 강제종료 후 다시 부팅하니까 독이 다시 나타나있었음.!!
+
+
+[0804]
+1. 실습 중 humble 오류 발생... (계속 해결 못 하는 중 ... 구글링, 챗지피티에 나온 내용 다 따라해도 안 됨)
