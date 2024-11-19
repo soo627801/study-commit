@@ -1,0 +1,32 @@
+# CNN 학습을 위한 test 폴더를 만들 때 랜덤으로 사진을 복사하기 위한 코드
+
+import os
+import shutil
+import random
+
+train_dir = 'train 경로'
+test_dir = 'test 경로'
+num_test_samples = 125    # 원하는 사진 개수
+
+if not os.path.exists(test_dir):
+    os.makedirs(test_dir)
+
+for class_name in os.listdir(train_dir):
+    class_path = os.path.join(train_dir, class_name)
+
+    if os.path.isdir(class_path):
+        test_class_path = os.path.join(test_dir, class_name)
+
+        os.makedirs(test_class_path, exist_ok=True)
+        all_images = [img for img in os.listdir(class_path) if img.endswith(('.png'))]
+
+        if len(all_images) < num_test_samples:
+            print(f"{class_name} 폴더에는 {num_test_samples}개보다 적은 이미지가 있어, {len(all_images)}개를 선택합니다.")
+            num_test_samples = len(all_images)
+
+        test_images = random.sample(all_images, num_test_samples)
+
+        for img in test_images:
+            shutil.copy(os.path.join(class_path, img), os.path.join(test_class_path, img))
+
+print("테스트 데이터가 성공적으로 생성되었습니다.")
