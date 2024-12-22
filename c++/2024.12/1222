@@ -1,0 +1,36 @@
+#include <iostream>
+/*
+// 디폴트 값은 함수의 선언 부분에만 위치함. 왜냐하면 컴파일러의 컴파일 특성 때문임.
+// 컴파일러는 함수의 디폴트 값 지정여부를 알아야 함수의 호출 문장을 적절히 컴파일 할 수 있음.
+int Adder(int num1 = 1, int num2 = 2);
+
+int main(void)
+{
+    std::cout<<Adder()<<std::endl;
+    std::cout<<Adder(5)<<std::endl;
+    std::cout<<Adder(3, 5)<<std::endl;
+    return 0;
+}
+
+int Adder(int num1, int num2)
+{
+    return num1+num2;
+}
+// 매개변수의 일부에만 디폴트 값을 지정하고, 채워지지 않은 매개변수에만 인자 전달하는 것이 가능함.
+// 전달되는 인자가 왼쪽에서부터 채워지므로, 디폴트 값은 오른쪽에서부터 채워져야 함.
+*/
+
+// 매크로 함수, 인라인 함수
+// 장점 : 함수가 인라인화되어 성능의 향상으로 이어질 수 있음.
+// 단점 : 함수의 정의 방식이 일반 함수에 비해 복잡하여 복잡한 함수의 정의에는 한계가 있음.
+// 매크로 함수의 장점은 취하고 단점은 보완한 것이 인라인 함수임.
+inline int SQUARE(int x)
+{
+    return x*x;
+}
+int main(void)
+{
+    std::cout<<SQUARE(5)<<std::endl;
+    std::cout<<SQUARE(12)<<std::endl;
+    return 0;
+}
